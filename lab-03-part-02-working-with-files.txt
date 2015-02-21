@@ -12,13 +12,13 @@ Follow the instructions line-by-line.
 [NO OUTPUT]
 ----------
 ==========
-2. Find out if mtec1002-lab-02 already exists (from the previous lab).  If it doesn't, go back to the previous lab and find the steps regarding downloading the lab materials.
+2. Find out if mtec1003-lab-03 already exists (from the previous lab).  If it doesn't, go back to the previous lab and find the steps regarding downloading the lab materials.
 
-(See steps 1-8 in http://foureyes.github.io/mtec1002-spring2014/labs/03/lab-03-part-02-working-with-files.txt)
+(See steps 1-8 in http://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/03/lab-03-part-02-working-with-files.txt)
 [NO OUTPUT]
 ----------
 ==========
-3. Change your directory mtec1002-lab-03
+3. Change your directory mtec1003-lab-03
 [NO OUTPUT]
 ----------
 ==========
@@ -36,24 +36,28 @@ $ touch foo.txt
 $ ls
 Copy and paste the output below.
 ----------
-
-
+ent-v321-004:my_files student$ touch foo.txt
+ent-v321-004:my_files student$ ls
+foo.txt
 
 ==========
 7. Create another new file using touch.
 
 $ touch bar.txt
 ----------
-
-
+ent-v321-004:my_files student$ touch bar.txt
+ent-v321-004:my_files student$ ls
+bar.txt	foo.txt
 
 ==========
 8. List the files in this directory using the flag that gives the most details.
 
 Copy and paste the output below.
 ----------
-
-
+drwxr-xr-x  4 student  staff  136 Feb 21 13:28 .
+-rw-r--r--  1 student  staff    0 Feb 21 13:28 bar.txt
+-rw-r--r--  1 student  staff    0 Feb 21 13:27 foo.txt
+drwxr-xr-x  7 student  staff  238 Feb 21 13:27 ..
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -61,25 +65,31 @@ Copy and paste the output below.
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
-
-
+ent-v321-004:my_files student$ cp bar.txt baz.txt
+ent-v321-004:my_files student$ ls
+bar.txt	baz.txt	foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+ent-v321-004:my_files student$ rm bar.txt
+ent-v321-004:my_files student$ ls
+baz.txt	foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
-
-
+ent-v321-004:my_files student$ mv foo.txt qux.txt
+ent-v321-004:my_files student$ ls
+baz.txt	qux.txt
 
 ==========
-12. Go up one directory so that you're in ~/mtec1002-lab-03.
+12. Go up one directory so that you're in ~/mtec1003-lab-03.
 [NO OUTPUT]
 ----------
 
@@ -90,7 +100,7 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
-
+rmdir: my_files: Directory not empty
 
 
 ==========
@@ -98,21 +108,22 @@ Write out the command that you used and what happened.
 
 Write out the command that you used and what happened.
 ----------
-
+rm: my_files: is a directory
 
 
 ==========
-15. MAKE SURE YOU'RE IN THE mtec1002-lab-03 directory!  
+15. MAKE SURE YOU'RE IN THE mtec1003-lab-03 directory!  
 
 Force the removal of the directory and files using the -rf flag
 
 $ rm -rf my_files
 ----------
-
-
+ent-v321-004:mtec1003-lab-03 student$ rm -rf my_files
+ent-v321-004:mtec1003-lab-03 student$ ls
+books	logs	web
 
 ==========
-16. There's a txt file version of a book located in the mtec1002-lab-03 folder.  It is in the following directory if you're in the lab folder:
+16. There's a txt file version of a book located in the mtec1003-lab-03 folder.  It is in the following directory if you're in the lab folder:
 
 books/other/pg1232.txt
 
@@ -120,7 +131,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
+Showed contents of the file titled “The Prince”
 
 
 ==========
@@ -132,8 +143,9 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+head books/other/pg1232.txt
 
-
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -142,10 +154,11 @@ books/other/pg1232.txt
 
 Use tail on the file to show the contents of the end of the file.  
 
-Write the command that you used below.  Write the last line of the output below (it should be the title).
+Write the command that you used below.  Write the last line of the output below.
 ----------
+tail books/other/pg1232.tx
 
-
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -156,7 +169,11 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
+more books/other/pg1232.txt
 
+less books/other/pg1232.txt
+
+Showed the text on the screen by page. Spacebar went down page by page; q quit the text
 
 
 ==========
@@ -164,15 +181,44 @@ Write the command that you used below.  Describe what spacebar and q does after 
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
+More - show more contents of a file by page
 
+Less - show less contents of a file by page
+
+Cat - to show all contents of a file
+
+Tail - to show contents at the end of a file
+
+Head - to show contents at the start of a file
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
+wc books/other/pg1232.txt
 
-
+52639
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+wc -l books/other/pg1232.txt
+
+5063
+
+==========
+OPTIONAL
+
+23.  Make sure you're in the books/other folder.  Copy all of the txt files from that folder to your home directory using wildcard matching.
+
+Write the command that you used below.
+----------
+cp *.txt ~
+
+ent-v321-004:~ student$ ls
+Applications		Music			VirtualBox VMs
+Desktop			My Song.band		mtec1003-lab-03
+Documents		Pictures		mtec1003-lab-03.tar.gz
+Downloads		Public			pg1232.txt
+Library			Sites			vms
+Movies			Things
